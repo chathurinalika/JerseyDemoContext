@@ -22,8 +22,10 @@ public class DemoContext {
 	public String getValue(@Context UriInfo uriInfo, @Context HttpHeaders headers){
 		
 		String uri = uriInfo.getAbsolutePath().toString();
-		String header = headers.getMediaType().toString();
+		String mediaType = headers.getMediaType().toString();
+		String reqHeader = headers.getRequestHeaders().toString();
 		
-		return "Path : '" + uri + "' and Header : '" + header + "'";
+		return "Path : '" + uri + "' ---- Media Type : '" + mediaType + "' ---- Request Header : '" + 
+				reqHeader + "'";
 	}
 }
